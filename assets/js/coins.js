@@ -10,9 +10,9 @@ let upnupFaucet;
 //polygon chain variables (to add mainnet once contract is deployed and connection made):
 
 let validChainIDPoly = option_is_mainnet ? "0x89" : "0x13881"
-let BetterTimesTokenAddressPoly = option_is_mainnet ? "0x7a43b46e9e74d2d43Edc4Be79ce689588aA087EB" :
+let BetterTimesTokenAddressPoly = option_is_mainnet ? "0x0A6A2b85Ab3ff973553f6c15698cC5DFFCC49553" :
     "0x2463Ee633189334dF03e38B3d69b71980c548b6a"
-let UpnupFaucetAddressPoly = option_is_mainnet ? "0x7e195e38161E0Ba33e73A062a8068b70060b94b6":
+let UpnupFaucetAddressPoly = option_is_mainnet ? "0x0275a4F9d17f186C140957120d43e9aEedC3678B":
     "0x3b4c97436d290632Fdd8b53B85eC3e2fa337A946"
 
 //function to check user account and retrieve either via Infura or via the chain.
@@ -319,7 +319,7 @@ async function unstakeUPNUP() {
 async function checkDeadlines() {
     hasStake = await betterTimesToken.methods.hasStake(userAccount).call({from:userAccount})
     console.log(hasStake)
-    if(hasStake.isStaking==false){
+    if(hasStake.isStaking===false){
         $('#nothingStaked').modal({fadeDuration: 400})
     }
     else {
