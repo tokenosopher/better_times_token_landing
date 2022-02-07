@@ -707,7 +707,7 @@
                 <!-- Pop-up ( metamaskInstalled ) -->
                 <div id="metamaskInstalledAlert" class="modal modal-modifier">
                     <h3 class="m-b-3">Ooops!</h3>
-                    <p class="m-b-3">You do not have Metamask as your main Ethereum provider.</p>
+                    <p class="m-b-3">You do not have Metamask as your main blockchain provider.</p>
                     <p class="m-b-3"> Please change your settings so that Metamask becomes your main ethereum provider</p>
                     <a href="#" rel="modal:close" class="modal-button">
                         <button class="default-button button-border m-b-3">
@@ -730,25 +730,13 @@
                 </div>
                 <!-- /Pop-up ( metamaskUnlocked ) -->
 
-                <!-- Pop-up ( validChain ) -->
-                <div id="metamaskValidChainAlert" class="modal modal-modifier">
-                    <h4 class="m-b-3">Ooops!</h4>
-                    <p class="m-b-3">You don't seem to be connected to the Ethereum Mainnet chain on Metamask.</p>
-                    <p class="m-b-3">Gratitude Coin runs on the Ethereum Mainnet. Please select it from the dropdown menu in your Metamask wallet.</p>
-                    <a href="#" rel="modal:close" class="modal-button">
-                        <button class="default-button button-border m-b-3">
-                            <span class="button-text">Close</span>
-                        </button>
-                    </a>
-                </div>
-                <!-- /Pop-up ( validChain ) -->
             <!-- /Handling Metamask Exceptions -->
 
             <!-- Handling Form Exceptions -->
                 <!-- Pop-up ( fieldsNotFilled ) -->
                 <div id="fieldsNotFilled" class="modal modal-modifier">
                     <h3 class="m-b-3" style="text-align: center">Ooops!</h3>
-                    <p class="m-b-3">You need to input the amount, the name and what you're grateful for to be able to buy gratitude coins with a personalized event. </p>
+                    <p class="m-b-3">You need to input all of the required fields.</p>
                     <a href="#" rel="modal:close" class="modal-button">
                         <button class="default-button button-border m-b-3">
                             <span class="button-text">Close</span>
@@ -760,7 +748,7 @@
                 <!-- /Pop-up ( fieldsNotFilledShare ) -->
                 <div id="fieldsNotFilledShare" class="modal modal-modifier">
                     <h3 class="m-b-3" style="text-align: center">Ooops!</h3>
-                    <p class="m-b-3">You need to input the address, the amount, the name and what you're grateful for to be able to share some Gratitude. </p>
+                    <p class="m-b-3">You need to input all of the required fields.</p>
                     <a href="#" rel="modal:close" class="modal-button">
                         <button class="default-button button-border m-b-3">
                             <span class="button-text">Close</span>
@@ -780,18 +768,6 @@
                     </a>
                 </div>
                 <!-- /Pop-up ( notValidAddressShare ) -->
-
-                <!-- Pop-up ( notEnoughFundsShare ) -->
-                <div id="notEnoughFundsShare" class="modal modal-modifier">
-                    <h3 class="m-b-3" style="text-align: center">Ooops!</h3>
-                    <p class="m-b-3">You seem to not have enough GRTFUL to make the trade. Make sure that you've selected the right Metamask account, and that you've inputted the correct amount.</p>
-                    <a href="#" rel="modal:close" class="modal-button">
-                        <button class="default-button button-border m-b-3">
-                            <span class="button-text">Close</span>
-                        </button>
-                    </a>
-                </div>
-                <!-- /Pop-up ( notEnoughFundsShare ) -->
             <!-- /Handling Form Exceptions -->
 
 
@@ -799,14 +775,8 @@
                 <!-- Pop-up ( transactionSuccess ) -->
                 <div id="transactionSuccess" class="modal modal-modifier">
                     <h3 class="m-b-3" style="text-align: center">Congratulations!</h3>
-                    <p class="m-b-3">Great news, you just got GRTFUL! Don't forget to import the token to your Metamask, to see
-                        it in your wallet. You can do so by pressing the button below.</p>
-                    <p class="m-b-3">You can also see your gratitude message by going <a href="https://etherscan.io/address/0x6563b5D8925ad3684BDB5923d56B0B24044eB90F#events" target="_blank">on Etherscan</a>, and finding your transaction (On Etherscan, switch from Hex to text on the transaction data to make it readable).</p>
-                    <a class="modal-button">
-                    <button class="default-button button-border-metamask m-b-3" onclick=addTokenToAddress()>
-                        <span class="button-text">Import GRTFUL to your Metamask</span>
-                    </button>
-                    </a>
+                    <p class="m-b-3">Great news, you just got UPNUP! Don't forget to import the token to your Metamask, to see
+                        it in your wallet. You can do so by going down on the page.</p>
                 </div>
                 <!-- /Pop-up ( transactionSuccess ) -->
 
@@ -821,25 +791,6 @@
                     </a>
                 </div>
                 <!-- /Pop-up ( transactionFailed ) -->
-
-                <!-- Pop-up ( transactionSuccessShared ) -->
-                <div id="transactionSuccessShared" class="modal modal-modifier">
-                    <h3 class="m-b-3" style="text-align: center">Congratulations!</h3>
-                    <p class="m-b-3">Great news, you just shared GRTFUL! Don't forget to send this webpage to the people that you shared it with, so that they know what you shared with them. Also, they need to import the token into their wallet to see it, which they can do here. </p>
-                    <p class="m-b-3">You can also see your gratitude message by going <a href="https://etherscan.io/address/0x6563b5D8925ad3684BDB5923d56B0B24044eB90F#events" target="_blank">on Etherscan</a>, and finding your transaction (Don't forget to switch from Hex to text on the transaction data).</p>
-                    <button class="default-button button-border m-b-3">
-                        <span class="button-text">Close</span>
-                    </button>
-                </div>
-                <!-- /Pop-up ( transactionSuccessShared ) -->
-
-            <!-- Pop-up ( transactionSuccessSharedPoly ) -->
-            <div id="transactionSuccessSharedPoly" class="modal modal-modifier">
-                <h3 class="m-b-3" style="text-align: center">Congratulations!</h3>
-                <p class="m-b-3">Great news, you just shared GRTFUL! Don't forget to send this webpage to the people that you shared it with, so that they know what you shared with them. Also, they need to import the token into their wallet to see it, which they can do here. </p>
-                <p class="m-b-3">You can also see your gratitude message by going <a href="https://polygonscan.com/address/0x01A8d35b2fd85dd2e73760d4E6300F1bdD47A118#events" target="_blank">on Polygonscan</a>, and finding your transaction (Don't forget to switch from Hex to text on the transaction data).</p>
-            </div>
-            <!-- /Pop-up ( transactionSuccessSharedPoly ) -->
 
             <!-- Pop-up ( transactionSuccessSharedPoly ) -->
             <div id="successfullyAddedCoinToMetamask" class="modal modal-modifier">
