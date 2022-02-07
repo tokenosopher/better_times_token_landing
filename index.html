@@ -94,19 +94,6 @@
                 <!-- /MENU ITEMS -->
 
 
-            <!-- SOCIAL ITEMS -->
-<!--            <div class="head m-b-2 m-t-7"><p class="small">Social</p></div>-->
-<!--            <div class="social-items">-->
-
-<!--                <div class="item"><a href="https://github.com/tokenosopher/sacred-coin-protocol" target="_blank"><span class="ti-github"></span></a></div>-->
-<!--                <div class="item"><a href="https://discord.gg/m3cNXWshRK" target="_blank"><span class="fab fa-discord icon-color"></span></a></div>-->
-<!--                <div class="item"><a href="https://twitter.com/tokenosopher"><span class="ti-twitter"></span></a></div>-->
-<!--                <div class="item"><a href="https://medium.com/sacred-coins"><span class="fab fa-medium icon-color"></span></a></div>-->
-
-<!--            </div>-->
-                <!-- /SOCIAL ITEMS -->
-
-
         </div>
         <!-- /MENU INNER -->
 
@@ -210,14 +197,17 @@
                             <!--                            <h3 class="m-b-4 m-l-1 scroll-animation">My approach to building<br> the tech brands of tomorrow.</h3>-->
                             <div class="seperator-line m-b-4 scroll-animation"></div>
 
-<!--                            <p class="scroll-animation m-b-3"> The coin guideline beneath has been retrieved directly from the coin itself. It is easily retrievable by any third-party, by interacting with the coin contract. </p>-->
-<!--                            <p class="scroll-animation m-b-3"> This guideline cannot be changed - its code is immutable, and it will forever be tied with the coin. </p>-->
-<!--                            <p class="m-b-3 scroll-animation"> The guideline for the gratitude coin is simple - only one guideline was necessary, as can be seen below. </p>-->
 
-<!--                            <div class="seperator-line m-b-4 scroll-animation"></div>-->
                             <p class="tag m-b-4">GUIDELINE</p>
 <!--                        here is where the javascript code injects the guidelines.-->
                             <div id="test-summary" class="scroll-animation"> </div>
+                            <h4 class="scroll-animation m-b-3">Help to remove poverty</h4>
+                            <p class="scroll-animation m-b-3">Every time you share or stake the coin, think of ways in which you can help to remove poverty in the world, and whenever possible act on those thoughts. It can be something at the level of your family, your community, your city, up to the whole world.</p>
+                            <div class="seperator-line m-b-4 scroll-animation"></div>
+                            <h4 class="scroll-animation m-b-3">Share the coin with those in need</h4>
+                            <p class="scroll-animation m-b-3">Perhaps one of the best ways to potentially remove poverty is to share the Easier Times Token with those who find themselves fallen on hard times. That way, a high demand of the coin can become synonymous with reducing poverty in the world, since whoever has these coins will have their finances improving.</p>
+
+
                             <br>
 
                         </div>
@@ -258,8 +248,11 @@
                             <H4 class="tag m-b-3 scroll-animation">GET (ON THE) UPNUP</H4>
                             <!--                                                        <h3 class="m-b-4 m-l-1 scroll-animation">My approach to building<br> the tech brands of tomorrow.</h3>-->
                             <div class="seperator-line m-b-4 scroll-animation"></div>
-                            <p class="scroll-animation m-b-3">Better Times Tokens are not for sale. You can, however, get them by using the faucet form below. The faucet contains 100 coins, for demonstration purposes.</p>
-                            <h3 class="scroll-animation m-b-3 text-center">Add button</h3>
+                            <p class="scroll-animation m-b-3">Better Times Tokens are not for sale. You can, however, get them by using the faucet form below. This faucet contains 100 coins, for demonstration purposes.</p>
+                            <p class="scroll-animation m-b-3">Note: The faucet will only drip one token per wallet, to avoid needlessly depleting it.</p>
+                            <button id="drip-faucet-btn" class="default-button button-border-metamask m-b-3" onclick=dripCoinFromFaucet()>
+                                <img src="assets/images/icons/metamask.png" class="metamask-icon-page m-r-2"> <span id="drip-faucet-txt" class="button-text">Drip UPNUP</span>
+                            </button>
 
                         </div>
                         <!-- /CONTAINER -->
@@ -276,11 +269,10 @@
                             <h3 class="tag m-b-3 scroll-animation">IMPORT UPNUP TO METAMASK</h3>
                             <!--                            <h3 class="m-b-4 m-l-1 scroll-animation">My approach to building<br> the tech brands of tomorrow.</h3>-->
                             <div class="seperator-line m-b-4 scroll-animation"></div>
-                            <p class="scroll-animation m-b-3">Once you get UPNUP, whether on Polygon or Ethereum, make sure that you add the token to your Metamask account, so that you can see your balance. You can do so by pressing the button below:</p>
+                            <p class="scroll-animation m-b-3">This page uses Metamask, so once you get UPNUP, whether on Polygon or Ethereum, make sure that you add the token to your Metamask account, so that you can see your balance. You can do so by pressing the button below:</p>
                             <button id="import-coin-btn" class="default-button button-border-metamask m-b-3" onclick=addTokenToAddress()>
                                 <img src="assets/images/icons/metamask.png" class="metamask-icon-page m-r-2"> <span id="import-coin-txt" class="button-text">Import UPNUP</span>
                             </button>
-                            <p class="scroll-animation m-b-3"> <span class="color-white">Note:</span> Make sure that your Metamask is on the chain where you have the tokens (Ethereum or Polygon), and that you have the right account selected before you press the button above.</p>
                         </div>
                         <!-- /CONTAINER -->
                     </div>
@@ -835,6 +827,9 @@
                     <h3 class="m-b-3" style="text-align: center">Congratulations!</h3>
                     <p class="m-b-3">Great news, you just shared GRTFUL! Don't forget to send this webpage to the people that you shared it with, so that they know what you shared with them. Also, they need to import the token into their wallet to see it, which they can do here. </p>
                     <p class="m-b-3">You can also see your gratitude message by going <a href="https://etherscan.io/address/0x6563b5D8925ad3684BDB5923d56B0B24044eB90F#events" target="_blank">on Etherscan</a>, and finding your transaction (Don't forget to switch from Hex to text on the transaction data).</p>
+                    <button class="default-button button-border m-b-3">
+                        <span class="button-text">Close</span>
+                    </button>
                 </div>
                 <!-- /Pop-up ( transactionSuccessShared ) -->
 
@@ -856,7 +851,7 @@
 
             <div id="nothingStaked" class="modal modal-modifier">
                 <h3 class="m-b-3" style="text-align: center">You don't seem to have anything staked!</h3>
-                <p class="m-b-3">You can stake some UPNUP anytime on this page.</p>
+                <p class="m-b-3">You can stake some UPNUP any time on this page. Just use the faucet to get a token, and try it out.</p>
             </div>
 
             <div id="stakeResult" class="modal modal-modifier">
@@ -864,6 +859,15 @@
                 <p class="m-b-3" id="start-unstaking">You will be able to unstake starting from </p>
                 <p class="m-b-3" id="staking-deadline">Your deadline to stake is </p>
             </div>
+
+            <!-- Pop-up ( transactionSuccessSharedPoly ) -->
+            <div id="succesfulDrip" class="modal modal-modifier">
+                <h3 class="m-b-3" style="text-align: center">You've just received an UPNUP! Make sure you import it in your wallet to see it.</h3>
+                <button class="default-button button-border m-b-3">
+                    <span class="button-text">Close</span>
+                </button>
+            </div>
+            <!-- /Pop-up ( transactionSuccessSharedPoly ) -->
 
             <!-- /Transaction Pop-ups -->
 
@@ -889,6 +893,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="https://kit.fontawesome.com/0f11bcc45b.js" crossorigin="anonymous"></script>
     <script src="assets/js/better_times_token_abi.js"></script>
+    <script src="assets/js/upnup_faucet_abi.js"></script>
 
 </body>
 

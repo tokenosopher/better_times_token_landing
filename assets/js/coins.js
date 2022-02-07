@@ -5,12 +5,15 @@ let validChainPoly = false;
 let userAccount;
 
 let betterTimesToken;
+let upnupFaucet;
 
 //polygon chain variables (to add mainnet once contract is deployed and connection made):
 
 let validChainIDPoly = option_is_mainnet ? "0x89" : "0x13881"
-let BetterTimesTokenAddressPoly = option_is_mainnet ? "0x01A8d35b2fd85dd2e73760d4E6300F1bdD47A118" :
-    "0x2eab25333FB01eAce6378DDbcA5B3423458d05C8"
+let BetterTimesTokenAddressPoly = option_is_mainnet ? "0x7a43b46e9e74d2d43Edc4Be79ce689588aA087EB" :
+    "0x2463Ee633189334dF03e38B3d69b71980c548b6a"
+let UpnupFaucetAddressPoly = option_is_mainnet ? "0x7e195e38161E0Ba33e73A062a8068b70060b94b6":
+    "0x3b4c97436d290632Fdd8b53B85eC3e2fa337A946"
 
 //function to check user account and retrieve either via Infura or via the chain.
 async function retrieveUserAccount() {
@@ -38,6 +41,8 @@ window.addEventListener('load', async () => {
             const chainId = await ethereum.request({method: 'eth_chainId'});
             if (chainId === validChainIDPoly) {
                 betterTimesToken = new web3.eth.Contract(betterTimesTokenABI, BetterTimesTokenAddressPoly)
+                upnupFaucet = new web3.eth.Contract(upnupFaucetABI, UpnupFaucetAddressPoly)
+
                 retrieveUserAccount()
                 validChainPoly = true;
             } else {
@@ -75,9 +80,7 @@ function handleMetamaskExceptions(blockchain="Polygon") {
         $('#metamaskUnlockedAlert').modal({fadeDuration: 400})
         setTimeout(function() {ethereum.request({method: 'eth_requestAccounts'})}, 1500)
     }
-    else if (blockchain==="Ethereum" && !validChainETH) $('#metamaskValidChainAlert').modal({fadeDuration: 400})
     else if (blockchain==="Polygon" && !validChainPoly) alert("Not poly!");
-    else if (blockchain==="Either" && !validChainPoly && !validChainETH) alert("Not either!");
 }
 
 async function addPolygonNetwork() {
@@ -316,7 +319,7 @@ async function unstakeUPNUP() {
 async function checkDeadlines() {
     hasStake = await betterTimesToken.methods.hasStake(userAccount).call({from:userAccount})
     console.log(hasStake)
-    if(hasStake.isStaking=false){
+    if(hasStake.isStaking==false){
         $('#nothingStaked').modal({fadeDuration: 400})
     }
     else {
@@ -329,7 +332,13 @@ async function checkDeadlines() {
 
 }
 
+async function dripCoinFromFaucet() {
+        try {
+            await upnupFaucet.methods.transferUpnup(userAccount).send({from:userAccount})
+            $('#succesfulDrip').modal({fadeDuration: 400})
+        } catch (e) {
+            console.log(e.message)
+            alert('error! '+e.message)
+        }
+}
 
-
-//start-unstaking
-//staking-deadline

@@ -347,7 +347,7 @@
  *******************************************************************/
 
 //if option_is_mainnet is false, it will run the website on the test network:
-const option_is_mainnet = false;
+const option_is_mainnet = true;
 
 if (!option_is_mainnet) alert("ATTENTION! Website running on the test network")
 
