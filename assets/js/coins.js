@@ -333,12 +333,15 @@ async function checkDeadlines() {
 }
 
 async function dripCoinFromFaucet() {
+    if (checkMetamaskExceptions()) {
         try {
-            await upnupFaucet.methods.transferUpnup(userAccount).send({from:userAccount})
+            await upnupFaucet.methods.transferUpnup(userAccount).send({from: userAccount})
             $('#succesfulDrip').modal({fadeDuration: 400})
         } catch (e) {
             console.log(e.message)
-            alert('error! '+e.message)
+            alert('error! ' + e.message)
         }
+    }
+    else (handleMetamaskExceptions())
 }
 
